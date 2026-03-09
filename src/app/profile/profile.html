@@ -1,0 +1,12 @@
+<h1>Welcome {{username}} </h1>
+<label>UserName : </label>
+<input [(ngModel)] = "username"/> <br>
+<label>Email : </label>
+<input [(ngModel)] = "email"/> <br>
+<label>Date of Birth : </label>
+<input [(ngModel)] = "dob"/> <br>
+
+<button (click)="onSave()" [disabled]="!username && !email && !dob">Save</button>
+<button (click)="onReset()" [disabled]="!username && !email && !dob">Reset</button>
+
+<h3> Number of Times Save button Clicked is {{count}}</h3>
