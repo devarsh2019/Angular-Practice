@@ -1,0 +1,40 @@
+<p>tasks works!</p>
+<div *ngIf ="TASKS.length == 0">
+   <h3>No tasks available</h3>
+</div>
+<div>
+    <label>Enter the tasks </label>
+    <input type="text" [(ngModel)] = "newTask.title"/><br>
+     <label>Enter the task Description</label>
+    <input type="text" [(ngModel)]="newTask.description" /><br>
+     <label>Status </label>
+     <select [(ngModel)] ="newTask.status">
+      <option value="Incomplete">Incomplete</option>
+      <option value="Completed">Completed</option>
+      <option value="In Progress">In Progress</option>
+    </select><br>
+    <label>Priority</label>
+     <select [(ngModel)] ="newTask.priority">
+      <option value="High">High</option>
+      <option value="Medium">Medium</option>
+      <option value="Low">Low</option>
+    </select><br>
+    <label>Due Date</label>
+  <input type="date" [(ngModel)] ="newTask.dueDate"/><br>
+  <button (click)="addTask()">Add Task</button>
+</div>
+
+<div>
+  <div *ngFor="let item of TASKS">
+    <p>{{ item.title }}</p>
+    <select [(ngModel)]="item.status">
+      <option value="Incomplete">Incomplete</option>
+      <option value="Completed">Completed</option>
+      <option value="In Progress">In Progress</option>
+      {{
+        item.status
+      }}
+    </select>
+    <p appChangecolor >{{item.description}}</p>
+  </div>
+</div>
