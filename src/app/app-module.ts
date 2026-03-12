@@ -10,8 +10,18 @@ import { Changecolor } from './changecolor';
 import { PipeData } from './pipe-data/pipe-data';
 import { PipeDataListPipe } from './pipe-data-list-pipe';
 import { PipeChild } from './pipe-data/pipe-child/pipe-child';
+import { Bookingflight } from './bookingflight/bookingflight';
 @NgModule({
-  declarations: [App, Profile, Tasks, Changecolor, PipeData, PipeDataListPipe, PipeChild],
+  declarations: [
+    App,
+    Profile,
+    Tasks,
+    Changecolor,
+    PipeData,
+    PipeDataListPipe,
+    PipeChild,
+    Bookingflight,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
