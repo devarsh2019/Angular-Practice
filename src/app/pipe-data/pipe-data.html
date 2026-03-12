@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="left-panel">
+    <h1 [style.color]="titleColor" class="list-title">DataList</h1>
+    <div *ngFor="let items of data; let i = index">
+      <div
+        class="dataList"
+        (click)="onClick(items, i)"
+        [ngStyle]="{
+          'border-left': (selectedIndex === i ? '10px' : '5px') + ' solid ' + items.color,
+        }"
+      >
+        <h3>{{ items.name }}</h3>
+        <p>{{ items.description | pipeDataList }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="right-panel">
+    <app-pipe-child [data]="displayDataRight" (saveClicked)="onSaveParent($event)"></app-pipe-child>
+  </div>
+</div>
